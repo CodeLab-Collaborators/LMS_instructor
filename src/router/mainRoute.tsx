@@ -13,6 +13,7 @@ import InsideTrack from "../pages/screen/home/InsideTrack"
 import MainCourse from "../pages/screen/mainCourses/MainCourse"
 import CourseBreakDown from "../pages/screen/mainCourses/package/CourseBreakDown"
 import DetailCoursePage from "../pages/screen/mainCourses/package/DetailCoursePage"
+import CreateCourse from "../pages/screen/create/CreateCourse"
 
 export const mainRoute = createBrowserRouter([
     {
@@ -38,6 +39,12 @@ export const mainRoute = createBrowserRouter([
                 index: true,
                 path: "inside",
                 element: <InsideTrack />
+            },
+
+            {
+                index: true,
+                path: "create-course",
+                element: <CreateCourse />
             },
             {
                 index: true,

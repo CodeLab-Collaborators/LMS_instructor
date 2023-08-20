@@ -7,7 +7,7 @@ import { useDispatch, useSelector } from "react-redux"
 import { MdGroups2 } from "react-icons/md"
 import { GoCommentDiscussion } from "react-icons/go"
 import { NavLink } from "react-router-dom"
-import { AiFillHome } from "react-icons/ai"
+import { AiFillHome, AiOutlineAppstoreAdd } from "react-icons/ai"
 
 const SideBar = () => {
     const dispatch = useDispatch()
@@ -16,7 +16,7 @@ const SideBar = () => {
     return (
         <div>
             <div
-                className={`w-[${toggle ? "200px" : "80px"}] z-50 duration-300 transition-all h-[100vh] fixed flex flex-col  bg-white  medium:hidden `}
+                className={`w-[${toggle ? "200px" : "80px"}]  z-50 duration-300 transition-all h-[100vh] fixed flex flex-col  bg-white  medium:hidden `}
 
             style={{
                 boxShadow: "rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px"
@@ -41,14 +41,37 @@ const SideBar = () => {
                 </div>
             }
 
+
+
             <div className="mt-[70px]" />
 
-            <div className="ml-5 font-ath text-[silver] mb-5 " >
-                {
-                    toggle ? <div className={`
+                <div className="ml-5 font-ath text-[silver] mb-5 " >
+
+
+                    <NavLink to="/create-course"
+                        className={({ isActive }) =>
+                            isActive ? 'flex items-center  bg-slate-100 hover:cursor-pointer duration-300 h-[40px] transition-all rounded text-[black] mb-[5px] pb-[5px] ' : ''
+                        }
+                    >
+                        <div className="flex items-center mt-2 pl-2 w-full hover:bg-slate-100 hover:cursor-pointer duration-300 transition-all py-3 rounded  " >
+                            <div  >
+                                <AiOutlineAppstoreAdd className="text-[20px] mr-2" />
+                            </div>
+                            <div className={`text-[#a1a0a0]  text-[14px] ${!toggle && "hidden"} duration-300 transition-all`} >Create Course</div>
+                        </div>
+                    </NavLink>
+
+
+                    <div />
+
+                </div>
+
+                <div className="ml-5 font-ath text-[silver] mb-5 " >
+                    {
+                        toggle ? <div className={`
                 uppercase 
                 `} >Personal</div> : <div className="border-b border-[silver] w-[30px]   " />
-                }
+                    }
 
                     <NavLink to="/"
                         className={({ isActive }) =>
@@ -83,11 +106,11 @@ const SideBar = () => {
                         }
                     >
                         <div className="flex items-center mt-2 pl-2 w-full hover:bg-slate-50 hover:cursor-pointer duration-300 transition-all py-3 rounded " >
-                    <div  >
-                        <BiSolidChart className="text-[20px] mr-2" />
-                    </div>
+                            <div  >
+                                <BiSolidChart className="text-[20px] mr-2" />
+                            </div>
                             <div className={`text-[#a1a0a0]  text-[14px] ${!toggle && "hidden"} duration-300 transition-all`} >My Timeline</div>
-                        </div>  
+                        </div>
                     </NavLink>
 
                     <NavLink to="/main-course"
@@ -96,15 +119,15 @@ const SideBar = () => {
                         }
                     >
                         <div className="flex items-center mt-2 pl-2 w-full hover:bg-slate-50 hover:cursor-pointer duration-300 transition-all py-3 rounded " >
-                    <div  >
-                        <BiSolidInbox className="text-[20px] mr-2" />
-                    </div>
+                            <div  >
+                                <BiSolidInbox className="text-[20px] mr-2" />
+                            </div>
                             <div className={`text-[#a1a0a0]  text-[14px] ${!toggle && "hidden"} duration-300 transition-all `} >On-going Course</div>
-                        </div>   
+                        </div>
                     </NavLink>
-                <div />
+                    <div />
 
-            </div>
+                </div>
 
             <div className="ml-5 font-ath text-[silver] mb-5 text-[14px] " >
 
